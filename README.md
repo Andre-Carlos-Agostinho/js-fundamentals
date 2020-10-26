@@ -1,2 +1,0 @@
-# js-fundamentals
-JavaScript fundamentals

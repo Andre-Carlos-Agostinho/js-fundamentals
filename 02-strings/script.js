@@ -30,10 +30,12 @@ console.log(`O canal do Youtube ${canalYoutube.trim()} foi criado por ${autor}`)
 // projeto
 const response = document.querySelector('div.response');
 
-function findText() {
-  const content = document.querySelector('input').value;
+function findWord() {
+  const inputContent = document.querySelector('input').value.toLowerCase();
+
+  response.innerHTML = content;
   
-  if (content.indexOf('pastel') !== -1)
+  if (inputContent.indexOf('pastel') !== -1)
     response.innerHTML = 'Encontrado';
   else
     response.innerHTML = 'Não encontrado';

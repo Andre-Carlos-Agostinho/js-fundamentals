@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Programador a bordo!</title>
   <style>
+    p {
+      text-align: center;
+    }
+
     input {
       display: block;
       margin: 0 auto;
@@ -15,7 +19,8 @@
   </style>
 </head>
 <body>
-  <input type="text" onkeyup="findText()">
+  <p>Digite uma palavra ou texto para verificar se ele contém a palavra "pastel"</p>
+  <input type="text" onkeyup="findWord()">
 
   <div class="response"></div>
 

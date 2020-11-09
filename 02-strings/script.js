@@ -2,6 +2,8 @@
 var nome = 'Programador a Bordo!';
 console.log(nome);
 
+console.log(nome[3]);
+
 console.log(nome.length);
 
 console.log('Programador'.length);
@@ -15,6 +17,8 @@ console.log(nome.indexOf('dor'));
 console.log(nome.replace('Programador', 'Desenvolvedor'));
 
 console.log(nome.slice(3, 8));
+
+console.log(nome.slice(12));
 
 var canalYoutube = '     Programador a Bordo    ';
 console.log(canalYoutube);

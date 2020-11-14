@@ -21,30 +21,28 @@
         ++contador;
     }
 
-    var contador = 0;
+    // exercício
+    // imprimir de 1 até 100
+    // se for múltiplo de 3 imprime ping
+    // se for múltiplo de 5 imprime pong
+    // se for múltiplo de 3 e 5 imprime ping pong
 
-    while (contador < 100) {
-        if (contador % 3 === 0 && contador % 5 === 0) {
+    console.log('=============');
+
+    var contador = 1;
+
+    while (contador <= 100) {
+        if ((contador % 3 === 0) && (contador % 5 === 0)) 
             console.log(`${contador} - PING PONG`);
-        } else if (contador % 3 === 0) {
+        else if (contador % 3 === 0) 
             console.log(`${contador} - PING`);
-        } else if (contador % 5 === 0) {
+        else if (contador % 5 === 0) 
             console.log(`${contador} - PONG`);
-        }
+        else
+            console.log(contador);
+
         ++contador;
     }
-
-
-
-
-
-
-
-
-
-
-
-
   </script>
 </body>
 </html>

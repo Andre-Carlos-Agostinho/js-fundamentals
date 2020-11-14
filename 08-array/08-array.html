@@ -15,28 +15,29 @@
 
     console.log(numeros.length);
 
-    var numeroRetornado = numeros.pop();
+    var numeroRetornado = numeros.pop(); // remove o último elemento do array e retorna ele
     console.log('numeroRetornado', numeroRetornado);
     console.log(numeros);
 
-    console.log(numeros.slice(2, 5));
+    console.log(numeros.slice(2, 5)); // pega uma fatia do array entre o segundo elemento até o quarto (não inclui o quinto)
 
-    console.log(numeros.slice(3));
+    console.log(numeros.slice(3)); // pega uma fatia do array a partir do terceiro elemento
 
     console.log(numeros.join('--'));
     console.log(numeros.join(' '));
+    console.log(numeros.join(' separador '));
 
     var usuario = [
-      'Ayrton',
-      26,
-      'Programador a Bordo',
-      2019,
+      'André',
+      19,
+      'Estudante',
+      2020,
       'Brasileiro'
     ];
 
     console.log(usuario);
 
-    usuario.push('RJ');
+    usuario.push('SP');
 
     console.log(usuario);
 
@@ -45,16 +46,19 @@
 
     console.log(usuario.includes(2019));
 
-    console.log(usuario.indexOf(2019));
+    console.log(usuario.indexOf(2020));
     console.log(usuario.indexOf('Japonês'));
 
     var arr1 = [3, 2, 1];
     var arr2 = ['Programador', 'a', 'Bordo'];
 
+    var resultado = arr2.concat(arr1);
+    console.log(resultado);
+
     var resultado = arr2.concat(arr1).concat(['teste', 'fulano', 'ciclano']);
     console.log(resultado);
 
-    console.log([...arr1, ...arr2, ...['teste', 'fulano', 'ciclano']]);
+    console.log([arr1, arr2, ['teste', 'fulano', 'ciclano']]);
 
     console.log(usuario);
 
@@ -69,6 +73,16 @@
     var [ nome, idade, , , nacionalidade ] = usuario;
     
     console.log(nome, idade, nacionalidade);
+
+    var animal = {
+      nome: 'Leão',
+      continente: 'Africa'
+    };
+
+    console.log(animal);
+
+    var { nome } = animal;
+    console.debug(nome);
   </script>
 </body>
 </html>

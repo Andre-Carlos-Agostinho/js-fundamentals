@@ -6,6 +6,10 @@
 </head>
 <body>
   <script>
+    // uma função não precisa obrigatoriamente retornar algo
+    // porém se não houver retorno explicíto ela retorna undefined
+    // para deixar explicíto o retorno da função utilize a declaração return
+
     function escreva() {
         console.log('Olá, Programador a Bordo!');
     }
@@ -30,7 +34,6 @@
 
     var resultadoSoma = soma(10, 5);
     console.log(resultadoSoma);
-
 
     function somaTudo(numeros) {
         var total = 0;
@@ -104,6 +107,53 @@
 
     escreveNome();
 
+    console.log('=========================');
+    
+    function sumArrayElements(arr) {
+        let sum = 0;
+
+        for (const el of arr)
+            sum += el;
+        
+        return sum;
+    }
+
+    console.log(sumArrayElements([2, 4, 6, 8, 3]));
+
+    const arr = ['André', 19];
+
+    function showArr([name, age]) {
+        return console.log('Array:', name, age);
+    }
+
+    showArr(arr);
+
+    const obj = {
+        name: 'André',
+        age: 19
+    };
+
+    function showObj({name, age}) {
+        return console.log('Object:', name, age);
+    }
+
+    showObj(obj);
+
+    (function selfExecutable() {
+        return console.log('This a self executable function!');
+    }());
+
+    (function () {
+        return console.log('This a self executable function!');
+    }());
+
+    function escrever(texto, fnCallback) {
+        return console.log(fnCallback(texto));
+    }
+
+    escrever('Texto aleatório', function (textoFinal) {
+        return textoFinal.toUpperCase();
+    });
   </script>
 </body>
 </html>

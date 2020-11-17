@@ -22,7 +22,6 @@
       // var { youtube: canal } = novoUsuario;
       // console.log(canal);
 
-
       // var novoUsuario2 = {
       //   nome: {
       //       primeiro: 'Ayrton 2',
@@ -36,10 +35,8 @@
       // var { nome: { primeiro }} = novoUsuario2;
       // console.log(primeiro);
 
-
       // var { nome: { segundo = 'Teshima' }} = novoUsuario2;
       // console.log(segundo);
-
 
       // function imprimeUsuario({ nome, idade, sexo, pais = 'Japão' }) {
       //   console.log(nome);
@@ -61,7 +58,6 @@
 
       // console.log(Object.values(usuarioFunction));
 
-
       var props = Object.keys(usuarioFunction);
       console.log(props);
 
@@ -69,7 +65,6 @@
         // console.log(props[i]);
         // console.log('usuarioFunction', usuarioFunction[props[i]])
       }
-
 
       for (var prop of props) {
         // console.log('usuarioFunction 2', usuarioFunction[prop])
@@ -81,41 +76,72 @@
         }   
       }
 
+      console.log('=============================');
 
+      const user = {
+        name: {
+          first: {
+            second: {
+              prop: 'Got it!'
+            }
+          }
+        }
+      };
 
+      var {
+        name: {
+          first: {
+            second: { prop }
+          } 
+        } 
+      } = user;
+      
+      console.log(prop);
 
+      const user2 = {
+        name: {
+          first: {
+            second: {}
+          }
+        }
+      };
 
+      var {
+        name: {
+          first: {
+            second: { prop = 'Standard value' }
+          } 
+        } 
+      } = user2;
 
+      console.log(prop);
 
+      const user3 = {
+        name: 'André',
+        email: 'andre@email.com',
+        city: 'Jaú'
+      };
 
+      function printUser({ name, email, city, country = 'Brasil' }) {
+        console.log(name, email, city, country);
+      }
 
+      printUser(user3);
 
+      console.log(Object.keys(user3));
+      console.log(Object.keys(user3).length);
+      console.log(Object.values(user3));
 
+      for (var prop of Object.keys(user3)) {
+        console.log(user3[prop]);
+      }
 
+      console.log('======');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      for (var prop in user3) {
+        if (user3.hasOwnProperty(prop)) // garante que só as propriedades originais do objeto serão exibidas, desconsiderando as que são herdadas
+          console.log(user3[prop]);
+      }
   </script>
 </body>
 </html>

@@ -50,18 +50,59 @@
     // console.log(biblioteca.add5())
     // console.log(biblioteca.add7())
 
-    function imprimeNomeCompleto(nome) {
+    // function imprimeNomeCompleto(nome) {
+    //   return function() {
+    //     console.log(nome, 'Teshima');
+    //   }
+    // }
+
+    // function inicializa() {
+    //   let nome = 'Ayrton';
+    //   setTimeout(imprimeNomeCompleto(nome), 1000)
+    // }
+
+    // inicializa();
+
+    console.log('==================================');
+
+    function showName() {
+      let name = 'André';
+      
       return function() {
-        console.log(nome, 'Teshima');
+        return console.log(name);
       }
     }
 
-    function inicializa() {
-      let nome = 'Ayrton';
-      setTimeout(imprimeNomeCompleto(nome), 1000)
+    showName(); // doesn't show anything
+    showName()(); // André
+
+    function closureTest() {
+      function helper(name) {
+        return `Hello, ${name}! How's it going?`;
+      }
+
+      return {
+        greet(name) {
+          return helper(name);
+        }
+      };
     }
 
-    inicializa();
+    const closure = closureTest();
+    console.log(closure.greet('Fernando'));
+
+    function showCity(city) {
+      return function() {
+        return console.log(city);
+      }
+    }
+
+    function start() {
+      const city = 'Jaú';
+      setTimeout(showCity(city), 2000);
+    }
+
+    start();
   </script>
 </body>
 </html>

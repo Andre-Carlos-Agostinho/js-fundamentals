@@ -6,62 +6,86 @@
 </head>
 <body>
   <script>
-    console.log(a);
-    var a = 123;
-    console.log(a);
+    // console.log(a);
+    // var a = 123;
+    // console.log(a);
 
 
-    // console.log(ddd);
-    // let ddd = 21;
+    // // console.log(ddd);
+    // // let ddd = 21;
 
-    // console.log(idade);
-    // const idade = 27;
+    // // console.log(idade);
+    // // const idade = 27;
     
-    // console.log(soma(10, 2));
-    // let soma = function(a, b) {
+    // // console.log(soma(10, 2));
+    // // let soma = function(a, b) {
+    // //   return a + b;
+    // // }
+
+    // console.log(soma(10, 5));
+    // function soma(a, b) {
     //   return a + b;
     // }
 
-    console.log(soma(10, 5));
-    function soma(a, b) {
-      return a + b;
-    }
+
+    // function testaHoisting() {
+    //   console.log('testaHoisting', aaa);
+    //   var aaa = 123;
+    // }
+
+    // testaHoisting();
 
 
-    function testaHoisting() {
-      console.log('testaHoisting', aaa);
-      var aaa = 123;
-    }
-
-    testaHoisting();
-
-
-    function calcula() {
-      return geraResultado();
-
-      /*
-        Muita lógica de código aqui...
-      */
+    // function calcula() {
+    //   return geraResultado();
+    //   /*
+    //    o hoisting facilitou a leitura da função calcula, com isso o dev
+    //    consegue entender de primeira o que essa função faz
+    //   */
+    
+    //   /*
+    //     Muita lógica de código aqui...
+    //   */
       
-      function soma(a, b) {
-        return a + b;
-      }
+    //   function soma(a, b) {
+    //     return a + b;
+    //   }
 
-      function geraResultado() {
-        return soma(10, 5) / 3;
-      }
+    //   function geraResultado() {
+    //     return soma(10, 5) / 3;
+    //   }
 
+    // }
+
+    // console.log(calcula());
+
+    console.log('============================');
+    
+    function hoistingTest() {
+      console.log(name);
+      var name = 'André';
     }
 
-    console.log(calcula());
+    hoistingTest(); // dispara undefined porque a engine JS lê nosso código assim:
+    // function hoistingTest() {
+    //   var name; // variável inicializada com valor undefined
+    //   console.log(name);
+    //   name = 'André';
+    // }
 
+    function hoistingWithLetOrConst() {
+      console.log(city);
+      let city = 'Jaú';
+    }
 
-
-
-
-
-
-
+    hoistingWithLetOrConst(); // dispara ReferenceError porque a engine lê nosso código assim:
+    // function hoistingWithLetOrConst() {
+    //   let city;
+    //   console.log(city);
+    //   city = 'Jaú';
+    // }
+    // existe uma Temporal Dead Zone entre a declaração e atribuição de valor a variável
+    // declaração de variáveis, constantes e funções sofrem hoisting
   </script>
 </body>
 </html>

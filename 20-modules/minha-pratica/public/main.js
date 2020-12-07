@@ -10,30 +10,33 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/functions.js":
-/*!************************************!*\
-  !*** ./js/components/functions.js ***!
-  \************************************/
-/*! namespace exports */
-/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
-/*! other exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ "./js/components/ShowName.js":
+/*!***********************************!*
+  !*** ./js/components/ShowName.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => /* binding */ soma\n/* harmony export */ });\nfunction soma(a, b) {\r\n  return console.log(a + b);\r\n}\r\n\n\n//# sourceURL=webpack://minha-pratica/./js/components/functions.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (city => (\r\n    `\r\n        <h1>Sua cidade é: ${city}</h1>\r\n    `\r\n));\r\n\n\n//# sourceURL=webpack://minha-pratica/./js/components/ShowName.js?");
 
 /***/ }),
 
 /***/ "./js/main.js":
-/*!********************!*\
+/*!********************!*
   !*** ./js/main.js ***!
   \********************/
-/*! namespace exports */
-/*! exports [not provided] [no usage info] */
-/*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/functions */ \"./js/components/functions.js\");\n\r\n\r\n(0,_components_functions__WEBPACK_IMPORTED_MODULE_0__.default)(2, 3);\r\n\n\n//# sourceURL=webpack://minha-pratica/./js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_ShowName__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ShowName */ \"./js/components/ShowName.js\");\n/* harmony import */ var _modules_functions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/functions */ \"./js/modules/functions.js\");\n\r\n\r\n\r\ndocument.querySelector('#app').innerHTML = (0,_components_ShowName__WEBPACK_IMPORTED_MODULE_0__.default)('Jaú');\r\n\r\nconsole.log('Soma:', (0,_modules_functions__WEBPACK_IMPORTED_MODULE_1__.soma)(2, 3));\r\nconsole.log('Divisão:', (0,_modules_functions__WEBPACK_IMPORTED_MODULE_1__.divisao)(12, 4));\r\n\n\n//# sourceURL=webpack://minha-pratica/./js/main.js?");
+
+/***/ }),
+
+/***/ "./js/modules/functions.js":
+/*!*********************************!*
+  !*** ./js/modules/functions.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"soma\": () => /* binding */ soma,\n/* harmony export */   \"divisao\": () => /* binding */ divisao\n/* harmony export */ });\nfunction soma(num1, num2) {\r\n    return num1 + num2;\r\n}\r\n\r\nfunction divisao(num1, num2) {\r\n    return num1 / num2;\r\n}\r\n\n\n//# sourceURL=webpack://minha-pratica/./js/modules/functions.js?");
 
 /***/ })
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises parte 2</title>
+</head>
+<body>
+    <script>
+        function promiseJaResolvida() {
+            return new Promise((resolve, reject) => resolve('Promise resolvida'));
+        }
+
+        function promiseJaRejeitada() {
+            return new Promise((resolve, reject) => reject('Promise rejeitada'));
+        }
+
+        function buscaCep(cep) {
+            return fetch(`https://viacep.com.br/ws/${cep}/json/`, {
+                method: 'GET',
+            });
+        }
+
+        async function mostraCep(data) {
+            const cepInfo = await data.json();
+            return console.log(cepInfo);
+        }
+
+        function trataErro(err) {
+           return console.log(`Ocorreu um erro: ${err}`); 
+        }
+
+        buscaCep(17204282)
+            .then(mostraCep)
+            .catch(trataErro)
+            .finally(() => console.log('O finally é sempre executado independente da situação da Promise'));
+
+        /* mesmo a promise de buscar o CEP sendo mais demorada, ela é exibida
+           primeiro por conta da ordem do array, essa é uma característica do
+           Promise.all() */
+        const promiseAll = Promise.all([
+            buscaCep(17204281),
+            promiseJaResolvida(),
+        ]);
+
+        promiseAll
+            .then((promises) => console.log('=== PROMISE ALL ===', promises))
+            .catch((err) => console.log('=== PROMISE ALL ===', err));
+        
+        /* já o Promise.race() vai exibir somente a Promise que for primeiramente
+           resolvida ou rejeitada */
+        const promiseRace = Promise.race([
+            buscaCep(17204281),
+            promiseJaResolvida(),
+            promiseJaRejeitada(),
+        ]);
+
+        promiseRace
+            .then((promises) => console.log('=== PROMISE RACE ===', promises))
+            .catch((err) => console.log('=== PROMISE RACE ===', err));
+    </script>
+</body>
+</html>

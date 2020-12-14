@@ -54,8 +54,6 @@ function realPromise() {
     });
 }
 
-//geigdiugeiude
-
 realPromise()
     .then((data) => console.log(data))
     .catch((reason) => console.log(reason));
